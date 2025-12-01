@@ -1,112 +1,299 @@
-/* Basic layout wrapper used across the site */
-.wrapper {
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 0 1rem;
+/* =========================
+   Base & Layout
+   ========================= */
+
+* {
+    box-sizing: border-box;
 }
 
-/* Footer styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", "Times New Roman", serif; /* font family #1 */
+    font-size: 1em;           /* body font size 1em */
+    color: #000000;           /* body font black */
+    background-color: #c8d9e8; /* page background color */
+    background-image: url("../images/pattern.png"); /* background image - adjust path if needed */
+    background-repeat: repeat;
+}
+
+/* Wrapper div required by assignment */
+#wrapper {
+    width: 1000px;
+    margin: 1.5rem auto;             /* center wrapper */
+    border: 1px solid black;
+    background-color: #ffffff;       /* body area different from page background */
+    padding: 1.5rem 2rem;
+}
+
+/* Contact page wrapper with rounded corners */
+body.contact-page #wrapper {
+    border-radius: 15%;
+}
+
+/* Heading text styles & alternate font family */
+h1, h2, h3 {
+    font-family: "Trebuchet MS", Arial, sans-serif; /* font family #2 */
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    letter-spacing: 0.4em;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.2em;
+    letter-spacing: 0.4em;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+body.contact-page h2 {
+    /* h2 with text shadow on contact page */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Optional third font family: used in nav links */
+nav a {
+    font-family: Verdana, Geneva, sans-serif; /* font family #3 */
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+
+header {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#top h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    margin-top: 0.4rem;
+}
+
+nav a {
+    display: inline-block;
+    margin-right: 0.6rem;
+    padding: 0.3rem 0.7rem;
+}
+
+/* Link styles (same pattern for all pages) */
+a {
+    line-height: 1.6;            /* required line-height for all links */
+    text-decoration: none;       /* no underline by default */
+}
+
+a:link,
+a:visited {
+    color: #8b4513;              /* not blue */
+}
+
+a:active {
+    color: #b35700;              /* active color */
+}
+
+a:hover {
+    color: #b35700;              /* hover color */
+    text-decoration: underline;  /* underline on hover */
+}
+
+/* Focus outline for accessibility */
+a:focus {
+    outline: 3px solid rgba(66,153,225,0.25);
+    outline-offset: 2px;
+}
+
+/* =========================
+   Main Content
+   ========================= */
+
+main {
+    padding-bottom: 2rem;
+}
+
+article {
+    margin-bottom: 1.5rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+/* Home page aside */
+aside {
+    background-color: #f3fafc;
+    padding: 1rem;
+    border-left: 4px solid #a4c4d6;
+}
+
+/* Featured photo on home page */
+.featured-photo img {
+    display: block;
+    margin: 0.5rem auto 0.75rem;
+}
+
+/* =========================
+   History Page Gallery
+   ========================= */
+
+.history-gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.history-gallery figure {
+    margin: 0;
+    text-align: center;
+}
+
+.history-gallery img {
+    display: block;
+    margin: 0 auto 0.5rem;
+    border: 3px outset black;   /* required image border style */
+}
+
+/* =========================
+   Contact Page
+   ========================= */
+
+.contact-card {
+    background-color: #fdfaf6;
+    padding: 1.5rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15); /* required box shadow */
+    border-radius: 12px;
+}
+
+.contact-details p {
+    margin: 0.3rem 0;
+}
+
+.contact-photo-wrap {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.contact-photo {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image with CSS transform effect */
+.contact-photo:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.contact-caption {
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* =========================
+   Footer Styles
+   (adapted from your original)
+   ========================= */
+
 .site-footer {
-	background: #1f2937; /* dark slate */
-	color: #e6eef8;
-	padding: 2rem 0 1.2rem;
-	font-size: 0.95rem;
+    background: #1f2937; /* dark slate */
+    color: #e6eef8;
+    padding: 2rem 0 1.2rem;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
 }
 
 .footer-inner {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1.25rem;
-	align-items: start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    align-items: start;
 }
 
 .footer-inner h3 {
-	margin-top: 0;
-	font-size: 1.05rem;
+    margin-top: 0;
+    font-size: 1.05rem;
 }
 
 .footer-nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .footer-nav li + li {
-	margin-top: 0.4rem;
+    margin-top: 0.4rem;
 }
 
 .footer-nav a,
 .footer-contact a,
 .footer-about a,
 .site-footer a {
-	color: #c9d6e6;
-	text-decoration: none;
+    color: #c9d6e6;
+    text-decoration: none;
 }
 
 .site-footer a:hover,
 .site-footer a:focus {
-	color: #ffffff;
-	text-decoration: underline;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .social {
-	display: flex;
-	gap: 0.6rem;
-	margin-top: 0.5rem;
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
 }
 
 .social a {
-	background: rgba(255,255,255,0.04);
-	padding: 0.25rem 0.5rem;
-	border-radius: 4px;
-	font-size: 0.95rem;
+    background: rgba(255,255,255,0.04);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
 }
 
 .footer-bottom {
-	margin-top: 1.2rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 1rem;
-	color: #b6c3d7;
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: #b6c3d7;
 }
 
 .footer-bottom small {
-	margin: 0;
+    margin: 0;
 }
 
 .footer-bottom .top {
-	color: #b6c3d7;
-	text-decoration: none;
+    color: #b6c3d7;
+    text-decoration: none;
 }
 
 .footer-bottom .top:hover,
 .footer-bottom .top:focus {
-	color: #ffffff;
-	text-decoration: underline;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-/* Responsive -> Stack columns on narrow screens */
+/* Responsive footer layout */
 @media (max-width: 720px) {
-	.footer-inner {
-		grid-template-columns: 1fr;
-		gap: 0.75rem;
-	}
-	.footer-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0.4rem;
-	}
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
 }
 
-/* Optional: Enhance header and nav for this small site */
-header nav a {
-	margin-right: 0.6rem;
-}
-
-/* Small accessibility improvements */
-a:focus {
-	outline: 3px solid rgba(66,153,225,0.25);
-	outline-offset: 2px;
-}
 
