@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Liegl Family</title>
+        <link rel="stylesheet" href="CSS/stylesheet.css">
     </head>
     <body>
-        <header>
+        <header id="top">
             <h1>Time to Meet the Liegl Family</h1>
             <nav>
                 <a href="index.html">Home</a>
@@ -15,14 +16,50 @@
             </nav>
         </header>
         <main>
-            <div id="wrapper">
+            <div class="wrapper">
                 <section>
-
+                    <h2>The Liegl Family</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis explicabo quisquam est inventore reiciendis dolores, blanditiis quaerat, consequuntur impedit nisi illum veritatis odit magnam quibusdam facilis? Soluta saepe nihil consequuntur?</p>
+                    <p>Et voluptates, distinctio assumenda laudantium, aliquam numquam consectetur, culpa quas nam dignissimos cum fugit necessitatibus deserunt amet a sint totam. Exercitationem nam voluptate ipsum harum accusamus debitis molestiae atque nulla.</p>
+                    <p>Aut est necessitatibus fugit sint cupiditate. Dolore voluptatum earum quibusdam et, corporis doloremque delectus facere iste, ducimus libero quam natus molestias vel quod totam culpa dignissimos reprehenderit ipsam id. Consequatur.</p>
+                    <p>Reprehenderit error nobis pariatur hic exercitationem architecto ipsa at eius quibusdam ea, aperiam quae! Maiores commodi explicabo asperiores voluptates possimus porro animi reprehenderit repellat eaque. Recusandae dolorum doloribus excepturi veritatis.</p>
+                    <p>Id, deserunt deleniti sed repudiandae autem illum sequi ut expedita optio molestiae eaque? Illo temporibus animi, doloribus sed velit dolores facilis adipisci, et corporis, ullam debitis dignissimos. Amet, quod enim.</p>
                 </section>
             </div>
         </main>
-        <footer>
-
+        <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+            <div class="footer-inner wrapper">
+                <div class="footer-about">
+                    <h3>The Liegl Family</h3>
+                    <p>Sharing our family history, pictures, and stories for friends and family to enjoy.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Quick links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="history.html">History</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:info@lieglfamily.example">info@lieglfamily.example</a></p>
+                    <p><a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+                    <div class="social" aria-label="Social links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom wrapper">
+                <small>&copy; <span id="year">2024</span> The Liegl Family — All rights reserved.</small>
+                <a class="top" href="#top" aria-label="Back to top">Back to top</a>
+            </div>
         </footer>
+        <script>
+            // dynamically update the copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
     </body>
 </html>
