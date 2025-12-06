@@ -26,11 +26,6 @@ body {
     padding: 1.5rem 2rem;
 }
 
-/* Contact page wrapper with rounded corners */
-body.contact-page #wrapper {
-    border-radius: 15%;
-}
-
 /* Heading text styles & alternate font family */
 h1, h2, h3 {
     font-family: "Trebuchet MS", Arial, sans-serif; /* font family #2 */
